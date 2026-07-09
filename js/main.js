@@ -41,4 +41,26 @@
   } else {
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
+
+  var dashboard = document.querySelector('.dashboard-window');
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (dashboard && window.matchMedia('(hover: hover)').matches && !prefersReducedMotion) {
+    var rafId = null;
+    dashboard.addEventListener('mousemove', function (e) {
+      if (rafId) return;
+      rafId = requestAnimationFrame(function () {
+        var rect = dashboard.getBoundingClientRect();
+        var px = (e.clientX - rect.left) / rect.width - 0.5;
+        var py = (e.clientY - rect.top) / rect.height - 0.5;
+        dashboard.style.transform =
+          'perspective(1400px) rotateX(' + (py * -6) + 'deg) rotateY(' + (px * 8) + 'deg)';
+        rafId = null;
+      });
+    });
+    dashboard.addEventListener('mouseleave', function () {
+      dashboard.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+      dashboard.style.transform = '';
+      setTimeout(function () { dashboard.style.transition = ''; }, 600);
+    });
+  }
 })();
