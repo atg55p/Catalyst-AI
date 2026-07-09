@@ -55,67 +55,76 @@
         <a href="#cta" class="btn btn--primary btn--lg">Book a Demo</a>
         <a href="#how-it-works" class="btn btn--ghost btn--lg">See How It Works</a>
       </div>
-
-      <div class="stat-pills reveal">
-        <div class="stat-pill"><span>20–30</span>Customer Conversations/Month</div>
-        <div class="stat-pill"><span>15–25</span>Hours Saved/Week</div>
-        <div class="stat-pill"><span>3–5×</span>Faster Validation</div>
-      </div>
     </div>
 
     <!-- Dashboard mockup -->
-    <div class="dashboard reveal" aria-hidden="true">
-      <div class="dcard dcard--hypothesis">
-        <div class="dcard__label">Hypothesis</div>
-        <div class="tag-row">
-          <span class="tag">ICP: Seed SaaS founders</span>
-          <span class="tag">Persona: Technical CEO</span>
-          <span class="tag tag--red">Assumption: Willingness to pay</span>
+    <div class="dashboard-window reveal" aria-hidden="true">
+      <div class="dashboard-window__head">
+        <div class="dashboard-window__dots">
+          <span class="dot dot--red"></span><span class="dot"></span><span class="dot"></span>
         </div>
+        <div class="dashboard-window__tag">catalyst.ai / workspace</div>
       </div>
 
-      <div class="dcard dcard--discovery">
-        <div class="dcard__label">Customer Discovery</div>
-        <div class="bar-chart">
-          <span style="--h:38%"></span>
-          <span style="--h:55%"></span>
-          <span style="--h:44%"></span>
-          <span style="--h:70%"></span>
-          <span style="--h:60%"></span>
-          <span style="--h:88%"></span>
-          <span style="--h:100%" class="is-active"></span>
+      <div class="dashboard-window__grid">
+        <div class="dcard dcard--hypothesis">
+          <span class="dcard__dot dcard__dot--red"></span>
+          <div class="dcard__label">Hypothesis</div>
+          <p class="dcard__quote">&ldquo;Ops leaders at Series A SaaS need faster onboarding analytics.&rdquo;</p>
+          <span class="tag tag--red">ICP validated</span>
         </div>
-        <div class="dcard__foot">124 companies matched</div>
-      </div>
 
-      <div class="dcard dcard--pipeline">
-        <div class="dcard__label">Interview Pipeline</div>
-        <div class="pipeline">
-          <div class="pipeline__stage"><span class="pipeline__count">42</span>Sourced</div>
-          <div class="pipeline__stage"><span class="pipeline__count">27</span>Scheduled</div>
-          <div class="pipeline__stage"><span class="pipeline__count">19</span>Completed</div>
-        </div>
-      </div>
-
-      <div class="dcard dcard--insight">
-        <div class="dcard__label">Insight Dashboard</div>
-        <div class="donut-wrap">
-          <div class="donut"></div>
-          <div class="donut-legend">
-            <div><i style="background:#F9423A"></i>Pain Points</div>
-            <div><i style="background:#F6F2F1"></i>Feature Demand</div>
-            <div><i style="background:#8a8378"></i>Objections</div>
+        <div class="dcard dcard--discovery">
+          <span class="dcard__dot"></span>
+          <div class="dcard__label">Customer Discovery</div>
+          <div class="person-row">
+            <span class="person-row__name">Ava P. <i>&middot; COO</i></span>
+            <span class="person-row__match">match 94%</span>
+          </div>
+          <div class="person-row">
+            <span class="person-row__name">Marcus L. <i>&middot; Head of Ops</i></span>
+            <span class="person-row__match">match 91%</span>
+          </div>
+          <div class="person-row">
+            <span class="person-row__name">Priya S. <i>&middot; VP Product</i></span>
+            <span class="person-row__match">match 88%</span>
           </div>
         </div>
-      </div>
 
-      <div class="dcard dcard--score">
-        <div class="dcard__label">Validation Score</div>
-        <div class="score-ring">
-          <span>78</span>
+        <div class="dcard dcard--pipeline">
+          <span class="dcard__dot"></span>
+          <div class="dcard__label">Interview Pipeline</div>
+          <div class="stage-row"><span class="stage-row__label">Reached</span><span class="stage-row__bar"><i style="--w:100%"></i></span><span class="stage-row__num">100</span></div>
+          <div class="stage-row"><span class="stage-row__label">Replied</span><span class="stage-row__bar"><i style="--w:62%"></i></span><span class="stage-row__num">62</span></div>
+          <div class="stage-row"><span class="stage-row__label">Booked</span><span class="stage-row__bar"><i style="--w:34%"></i></span><span class="stage-row__num">34</span></div>
+          <div class="stage-row"><span class="stage-row__label">Done</span><span class="stage-row__bar"><i style="--w:22%"></i></span><span class="stage-row__num">22</span></div>
         </div>
-        <div class="dcard__foot">Trending up this week</div>
+
+        <div class="dcard dcard--insight">
+          <span class="dcard__dot"></span>
+          <div class="dcard__label">Insight Dashboard</div>
+          <div class="bar-chart bar-chart--gradient">
+            <span style="--h:44%"></span><span style="--h:62%"></span><span style="--h:38%"></span>
+            <span style="--h:72%"></span><span style="--h:56%"></span><span style="--h:88%"></span>
+            <span style="--h:48%"></span><span style="--h:66%"></span><span style="--h:58%"></span>
+            <span style="--h:78%"></span><span style="--h:52%"></span><span style="--h:70%"></span>
+          </div>
+        </div>
+
+        <div class="dcard dcard--score">
+          <span class="dcard__dot dcard__dot--red"></span>
+          <div class="dcard__label">Validation Score</div>
+          <div class="score-big"><strong>78</strong><em>/100</em></div>
+          <div class="score-track"><i style="--w:78%"></i></div>
+          <div class="dcard__foot">Signal trending up &middot; +12 wk</div>
+        </div>
       </div>
+    </div>
+
+    <div class="hero-metrics reveal">
+      <div class="hero-metric-card"><span>20&ndash;30</span>Customer Conversations/Month</div>
+      <div class="hero-metric-card"><span>15&ndash;25</span>Hours Saved/Week</div>
+      <div class="hero-metric-card"><span>3&ndash;5&times;</span>Faster Validation</div>
     </div>
   </section>
 
@@ -126,28 +135,28 @@
       <h2 class="section__heading reveal">Founders Spend Too Much Time<br>Looking for Answers</h2>
       <p class="section__subhead reveal">Customer discovery is critical, but most founders lose weeks on manual research, outreach, follow-ups, scheduling, and scattered notes.</p>
 
-      <div class="grid grid--6 reveal">
-        <div class="mini-card">
+      <div class="grid grid--6">
+        <div class="mini-card reveal">
           <svg class="mini-card__icon" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           <h3>Finding Customers</h3>
         </div>
-        <div class="mini-card">
+        <div class="mini-card reveal">
           <svg class="mini-card__icon" viewBox="0 0 24 24" fill="none"><path d="M4 19V5m6 14V9m6 10V3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           <h3>Market Research</h3>
         </div>
-        <div class="mini-card">
+        <div class="mini-card reveal">
           <svg class="mini-card__icon" viewBox="0 0 24 24" fill="none"><path d="M4 5h16M4 12h16M4 19h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           <h3>Writing Outreach</h3>
         </div>
-        <div class="mini-card">
+        <div class="mini-card reveal">
           <svg class="mini-card__icon" viewBox="0 0 24 24" fill="none"><path d="M3 12a9 9 0 1 0 3-6.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M3 4v5h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <h3>Follow-ups</h3>
         </div>
-        <div class="mini-card">
+        <div class="mini-card reveal">
           <svg class="mini-card__icon" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4.5" width="17" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 9.5h17M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           <h3>Scheduling</h3>
         </div>
-        <div class="mini-card">
+        <div class="mini-card reveal">
           <svg class="mini-card__icon" viewBox="0 0 24 24" fill="none"><path d="M5 4h11l3 3v13H5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 10h6M9 14h6M9 18h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           <h3>Feedback Notes</h3>
         </div>
@@ -181,31 +190,52 @@
       <p class="eyebrow reveal">HOW IT WORKS</p>
       <h2 class="section__heading reveal">From Hypothesis to Product-Market Fit</h2>
 
-      <div class="timeline">
-        <div class="timeline__step reveal">
-          <div class="timeline__badge">01</div>
-          <h3>Define Hypothesis</h3>
-          <p>Share your product, ICP, customer persona, and assumptions.</p>
+      <div class="timeline-v">
+        <div class="timeline-v__line" aria-hidden="true"></div>
+
+        <div class="tl-row">
+          <div class="tl-card tl-card--left reveal">
+            <span class="tl-card__num">01</span>
+            <h3>Define Hypothesis</h3>
+            <p>Share your product, ICP, customer persona, and assumptions.</p>
+          </div>
+          <div class="tl-node">01</div>
         </div>
-        <div class="timeline__step reveal">
-          <div class="timeline__badge">02</div>
-          <h3>Research Market</h3>
-          <p>Catalyst finds companies, decision makers, competitors, and trends.</p>
+
+        <div class="tl-row">
+          <div class="tl-node">02</div>
+          <div class="tl-card tl-card--right reveal">
+            <span class="tl-card__num">02</span>
+            <h3>Research Market</h3>
+            <p>Catalyst finds companies, decision makers, competitors, and trends.</p>
+          </div>
         </div>
-        <div class="timeline__step reveal">
-          <div class="timeline__badge">03</div>
-          <h3>Launch Outreach</h3>
-          <p>Personalized founder-led outreach that sounds human and relevant.</p>
+
+        <div class="tl-row">
+          <div class="tl-card tl-card--left reveal">
+            <span class="tl-card__num">03</span>
+            <h3>Launch Outreach</h3>
+            <p>Personalized founder-led outreach that sounds human and relevant.</p>
+          </div>
+          <div class="tl-node">03</div>
         </div>
-        <div class="timeline__step reveal">
-          <div class="timeline__badge">04</div>
-          <h3>Schedule Meetings</h3>
-          <p>Qualified prospects book directly into your calendar.</p>
+
+        <div class="tl-row">
+          <div class="tl-node">04</div>
+          <div class="tl-card tl-card--right reveal">
+            <span class="tl-card__num">04</span>
+            <h3>Schedule Meetings</h3>
+            <p>Qualified prospects book directly into your calendar.</p>
+          </div>
         </div>
-        <div class="timeline__step reveal">
-          <div class="timeline__badge">05</div>
-          <h3>Generate Insights</h3>
-          <p>Turn interviews into pain points, objections, feature demand, and trends.</p>
+
+        <div class="tl-row">
+          <div class="tl-card tl-card--left reveal">
+            <span class="tl-card__num">05</span>
+            <h3>Generate Insights</h3>
+            <p>Turn interviews into pain points, objections, feature demand, and trends.</p>
+          </div>
+          <div class="tl-node">05</div>
         </div>
       </div>
     </div>
@@ -217,55 +247,87 @@
       <p class="eyebrow reveal">FEATURES</p>
       <h2 class="section__heading reveal">Everything You Need to Validate Faster</h2>
 
-      <div class="feature-grid reveal">
-        <div class="feature-card feature-card--lg">
+      <div class="feature-row feature-row--top">
+        <div class="feature-card feature-card--lg reveal">
+          <span class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3.2" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 20c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="17" cy="8.5" r="2.4" stroke="currentColor" stroke-width="1.5"/><path d="M15.5 14.8c2.6.2 4.5 2.1 4.5 5.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
           <div class="feature-card__body">
             <h3>AI Customer Discovery</h3>
             <p>Find and engage ideal interview candidates.</p>
           </div>
-          <div class="feature-visual feature-visual--discovery">
-            <div class="bar-chart bar-chart--sm">
-              <span style="--h:30%"></span><span style="--h:50%"></span><span style="--h:40%"></span>
-              <span style="--h:65%"></span><span style="--h:85%"></span><span style="--h:100%" class="is-active"></span>
-            </div>
+          <div class="feature-visual">
+            <ul class="dot-list">
+              <li>Ideal ICP match</li>
+              <li>Decision maker signals</li>
+              <li>Warm intro pathways</li>
+            </ul>
           </div>
         </div>
 
-        <div class="feature-card feature-card--lg">
+        <div class="feature-card feature-card--lg reveal">
+          <span class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 20V10M10 20V4M16 20v-7M22 20v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
           <div class="feature-card__body">
             <h3>AI Market Research</h3>
             <p>Understand markets, competitors, and customer segments faster.</p>
           </div>
-          <div class="feature-visual feature-visual--research">
-            <div class="mini-radar"></div>
-          </div>
-        </div>
-
-        <div class="feature-card feature-card--lg">
-          <div class="feature-card__body">
-            <h3>Founder-Led Outbound</h3>
-            <p>Personalized outreach built around your product and audience.</p>
-          </div>
-          <div class="feature-visual feature-visual--outbound">
-            <div class="mini-lines">
-              <span></span><span></span><span></span><span></span>
+          <div class="feature-visual">
+            <div class="bar-chart bar-chart--gradient bar-chart--sm">
+              <span style="--h:40%"></span><span style="--h:62%"></span><span style="--h:34%"></span>
+              <span style="--h:70%"></span><span style="--h:50%"></span><span style="--h:88%"></span>
+              <span style="--h:46%"></span><span style="--h:64%"></span><span style="--h:56%"></span>
+              <span style="--h:76%"></span><span style="--h:48%"></span><span style="--h:68%"></span>
             </div>
           </div>
         </div>
 
-        <div class="feature-card">
+        <div class="feature-card feature-card--lg reveal">
+          <span class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M3 11l17-8-6 18-3.5-7.5L3 11z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="feature-card__body">
+            <h3>Founder-Led Outbound</h3>
+            <p>Personalized outreach built around your product and audience.</p>
+          </div>
+          <div class="feature-visual message-preview">
+            <div class="message-preview__to">To: Ava P.</div>
+            <p class="message-preview__text">Hi Ava &mdash; noticed your team scaled ops last quarter&hellip;</p>
+            <div class="message-preview__foot">
+              <span class="tag tag--red">Sent</span>
+              <span>92% relevance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-row feature-row--bottom">
+        <div class="feature-card reveal">
+          <span class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4.5" width="17" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 9.5h17M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
           <h3>Interview Scheduling</h3>
           <p>Keep your calendar filled without manual coordination.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reveal">
+          <span class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 12h17M12 3.5c2.4 2.3 3.6 5.3 3.6 8.5s-1.2 6.2-3.6 8.5c-2.4-2.3-3.6-5.3-3.6-8.5s1.2-6.2 3.6-8.5z" stroke="currentColor" stroke-width="1.5"/></svg>
+          </span>
           <h3>Customer Intelligence</h3>
           <p>Capture every insight from every conversation.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reveal">
+          <span class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 15l4-5 4 3 5-7 3 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
           <h3>Validation Dashboard</h3>
           <p>Track pain points, assumptions, feature requests, and objections.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reveal">
+          <span class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l1.8 4.8L18.5 9l-4.7 1.7L12 15.5l-1.8-4.8L5.5 9l4.7-1.2L12 3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M18.5 15.5l.9 2.3 2.3.9-2.3.9-.9 2.3-.9-2.3-2.3-.9 2.3-.9.9-2.3z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+          </span>
           <h3>Continuous Learning</h3>
           <p>The more you learn, the smarter your roadmap becomes.</p>
         </div>
@@ -321,28 +383,34 @@
       <p class="eyebrow reveal">OUTCOMES</p>
       <h2 class="section__heading reveal">Every Conversation Moves Your Product Forward</h2>
 
-      <div class="grid grid--6 metric-grid reveal">
-        <div class="metric-card">
+      <div class="grid grid--6 metric-grid">
+        <div class="metric-card reveal">
+          <svg class="metric-card__icon" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v10H8l-4 4V5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
           <div class="metric-card__num">20–30</div>
           <div class="metric-card__label">Qualified Conversations/Month</div>
         </div>
-        <div class="metric-card">
+        <div class="metric-card reveal">
+          <svg class="metric-card__icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.5"/><path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <div class="metric-card__num">15–25</div>
           <div class="metric-card__label">Hours Saved/Week</div>
         </div>
-        <div class="metric-card">
+        <div class="metric-card reveal">
+          <svg class="metric-card__icon" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4.5" width="17" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 9.5h17M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 14l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <div class="metric-card__num">5–8</div>
           <div class="metric-card__label">Customer Conversations/Week</div>
         </div>
-        <div class="metric-card">
+        <div class="metric-card reveal">
+          <svg class="metric-card__icon" viewBox="0 0 24 24" fill="none"><path d="M13 3L5 14h6l-1 7 9-12h-6l0-6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
           <div class="metric-card__num">3–5×</div>
           <div class="metric-card__label">Faster Validation Cycles</div>
         </div>
-        <div class="metric-card">
+        <div class="metric-card reveal">
+          <svg class="metric-card__icon" viewBox="0 0 24 24" fill="none"><path d="M12 3l1.8 4.8L18.5 9l-4.7 1.7L12 15.5l-1.8-4.8L5.5 9l4.7-1.2L12 3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
           <div class="metric-card__num">Continuous</div>
           <div class="metric-card__label">Insight Generation</div>
         </div>
-        <div class="metric-card">
+        <div class="metric-card reveal">
+          <svg class="metric-card__icon" viewBox="0 0 24 24" fill="none"><path d="M4 8l8-4.5L20 8l-8 4.5L4 8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M4 12l8 4.5L20 12M4 16l8 4.5L20 16" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
           <div class="metric-card__num">One Platform</div>
           <div class="metric-card__label">Research, Outreach, Scheduling, Learning</div>
         </div>
@@ -358,16 +426,27 @@
       <p class="eyebrow reveal">BUILT FOR</p>
       <h2 class="section__heading reveal">Designed for Early-Stage Teams</h2>
 
-      <div class="pill-grid reveal">
-        <span class="pill">Pre-Seed Startups</span>
-        <span class="pill">Seed Stage Companies</span>
-        <span class="pill">AI Startups</span>
-        <span class="pill">SaaS Founders</span>
-        <span class="pill">B2B Software Companies</span>
-        <span class="pill">Venture Studios</span>
-        <span class="pill">Startup Accelerators</span>
-        <span class="pill">Innovation Labs</span>
-        <span class="pill">Product Teams</span>
+      <div class="marquee reveal">
+        <div class="marquee__track">
+          <span class="pill">Pre-Seed Startups</span>
+          <span class="pill">Seed Stage Companies</span>
+          <span class="pill">AI Startups</span>
+          <span class="pill">SaaS Founders</span>
+          <span class="pill">B2B Software Companies</span>
+          <span class="pill">Venture Studios</span>
+          <span class="pill">Startup Accelerators</span>
+          <span class="pill">Innovation Labs</span>
+          <span class="pill">Product Teams</span>
+          <span class="pill" aria-hidden="true">Pre-Seed Startups</span>
+          <span class="pill" aria-hidden="true">Seed Stage Companies</span>
+          <span class="pill" aria-hidden="true">AI Startups</span>
+          <span class="pill" aria-hidden="true">SaaS Founders</span>
+          <span class="pill" aria-hidden="true">B2B Software Companies</span>
+          <span class="pill" aria-hidden="true">Venture Studios</span>
+          <span class="pill" aria-hidden="true">Startup Accelerators</span>
+          <span class="pill" aria-hidden="true">Innovation Labs</span>
+          <span class="pill" aria-hidden="true">Product Teams</span>
+        </div>
       </div>
     </div>
   </section>
