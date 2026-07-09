@@ -44,23 +44,46 @@
 
   var dashboard = document.querySelector('.dashboard-window');
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (dashboard && window.matchMedia('(hover: hover)').matches && !prefersReducedMotion) {
-    var rafId = null;
+  if (dashboard && window.matchMedia('(hover: hover) and (pointer: fine)').matches && !prefersReducedMotion) {
+    // Spring-like smoothing: interpolate toward the target tilt each frame
+    // rather than snapping the transform directly to the cursor position.
+    // This gives the tilt momentum/settle instead of feeling mechanically 1:1.
+    var targetX = 0, targetY = 0, currentX = 0, currentY = 0;
+    var loopId = null;
+    var STIFFNESS = 0.12;
+    var SETTLE_EPSILON = 0.01;
+
+    function tick() {
+      currentX += (targetX - currentX) * STIFFNESS;
+      currentY += (targetY - currentY) * STIFFNESS;
+      dashboard.style.transform =
+        'perspective(1400px) rotateX(' + currentY + 'deg) rotateY(' + currentX + 'deg)';
+
+      var settled =
+        Math.abs(targetX - currentX) < SETTLE_EPSILON &&
+        Math.abs(targetY - currentY) < SETTLE_EPSILON &&
+        targetX === 0 && targetY === 0;
+
+      if (!settled) {
+        loopId = requestAnimationFrame(tick);
+      } else {
+        dashboard.style.transform = '';
+        loopId = null;
+      }
+    }
+
     dashboard.addEventListener('mousemove', function (e) {
-      if (rafId) return;
-      rafId = requestAnimationFrame(function () {
-        var rect = dashboard.getBoundingClientRect();
-        var px = (e.clientX - rect.left) / rect.width - 0.5;
-        var py = (e.clientY - rect.top) / rect.height - 0.5;
-        dashboard.style.transform =
-          'perspective(1400px) rotateX(' + (py * -6) + 'deg) rotateY(' + (px * 8) + 'deg)';
-        rafId = null;
-      });
+      var rect = dashboard.getBoundingClientRect();
+      var px = (e.clientX - rect.left) / rect.width - 0.5;
+      var py = (e.clientY - rect.top) / rect.height - 0.5;
+      targetX = px * 8;
+      targetY = py * -6;
+      if (!loopId) loopId = requestAnimationFrame(tick);
     });
     dashboard.addEventListener('mouseleave', function () {
-      dashboard.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
-      dashboard.style.transform = '';
-      setTimeout(function () { dashboard.style.transition = ''; }, 600);
+      targetX = 0;
+      targetY = 0;
+      if (!loopId) loopId = requestAnimationFrame(tick);
     });
   }
 })();
