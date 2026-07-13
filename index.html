@@ -25,7 +25,7 @@
     </nav>
 
     <div class="navbar__cta">
-      <a href="#cta" class="btn btn--primary btn--sm">Book a Demo</a>
+      <button type="button" class="btn btn--primary btn--sm js-book-demo">Book a Demo</button>
     </div>
 
     <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu">
@@ -52,7 +52,7 @@
       <p class="hero__support reveal">Catalyst AI helps founders validate ideas faster by automating market research, founder-led outreach, interview scheduling, and customer insight analysis.</p>
 
       <div class="hero__actions reveal">
-        <a href="#cta" class="btn btn--primary btn--lg">Book a Demo</a>
+        <button type="button" class="btn btn--primary btn--lg js-book-demo">Book a Demo</button>
         <a href="#how-it-works" class="btn btn--ghost btn--lg">See How It Works</a>
       </div>
     </div>
@@ -468,7 +468,7 @@
       <p class="eyebrow">GET STARTED</p>
       <h2 class="cta__heading">Product-Market Fit Starts With Better Conversations</h2>
       <p class="cta__subhead">Catalyst AI helps founders learn faster, validate smarter, and build with confidence.</p>
-      <a href="mailto:hello@catalystai.com" class="btn btn--primary btn--lg">Book a Demo</a>
+      <button type="button" class="btn btn--primary btn--lg js-book-demo">Book a Demo</button>
     </div>
   </section>
 
@@ -495,6 +495,59 @@
     <span>&copy; 2026 Catalyst AI. All rights reserved.</span>
   </div>
 </footer>
+
+<!-- ============ BOOK A DEMO MODAL ============ -->
+<div class="modal" id="demoModal" aria-hidden="true">
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="demoModalTitle">
+    <button type="button" class="modal__close" data-modal-close aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+
+    <div class="modal__body">
+      <p class="eyebrow">GET STARTED</p>
+      <h3 id="demoModalTitle" class="modal__heading">Book a Demo</h3>
+      <p class="modal__subhead">See how Catalyst AI can accelerate your product-market fit.</p>
+
+      <form class="demo-form" id="demoForm" novalidate>
+        <input type="hidden" name="access_key" value="44332a4f-8fd6-4401-8364-028cd202359d">
+        <input type="hidden" name="subject" value="New demo request — Catalyst AI">
+        <input type="hidden" name="from_name" value="Catalyst AI Website">
+        <input type="checkbox" name="botcheck" class="demo-form__honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="demo-form__field">
+          <label for="demoName">Full name</label>
+          <input type="text" id="demoName" name="name" placeholder="Jane Founder" autocomplete="name" required>
+        </div>
+        <div class="demo-form__field">
+          <label for="demoEmail">Work email</label>
+          <input type="email" id="demoEmail" name="email" placeholder="jane@startup.com" autocomplete="email" required>
+        </div>
+        <div class="demo-form__field">
+          <label for="demoCompany">Company</label>
+          <input type="text" id="demoCompany" name="company" placeholder="Startup, Inc." autocomplete="organization" required>
+        </div>
+        <div class="demo-form__field">
+          <label for="demoMessage">What are you hoping to validate? <span>(optional)</span></label>
+          <textarea id="demoMessage" name="message" rows="3" placeholder="Tell us a bit about your product and stage."></textarea>
+        </div>
+
+        <p class="demo-form__error" id="demoFormError" hidden>Something went wrong sending your request. Please try again.</p>
+
+        <button type="submit" class="btn btn--primary demo-form__submit">
+          <span class="demo-form__submit-label">Request Demo</span>
+        </button>
+        <p class="demo-form__privacy">We'll only use this to reach out about your demo. No spam.</p>
+      </form>
+
+      <div class="demo-form__success" hidden>
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h4>Request received</h4>
+        <p>Thanks — a member of the Catalyst AI team will reach out shortly to schedule your demo.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="js/main.js"></script>
 </body>
