@@ -133,6 +133,12 @@
 
     demoForm.addEventListener('submit', function (e) {
       e.preventDefault();
+
+      if (!demoForm.checkValidity()) {
+        demoForm.reportValidity();
+        return;
+      }
+
       errorEl.hidden = true;
 
       // Honeypot: if filled, silently treat as success without submitting.
@@ -168,7 +174,7 @@
         .catch(function () {
           errorEl.hidden = false;
           submitBtn.disabled = false;
-          submitLabel.textContent = 'Request Demo';
+          submitLabel.textContent = 'Submit';
         });
     });
   }

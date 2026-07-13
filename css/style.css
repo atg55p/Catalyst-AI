@@ -1407,7 +1407,7 @@ body.modal-open { overflow: hidden; }
 .modal__panel {
   position: relative;
   width: 100%;
-  max-width: 460px;
+  max-width: 480px;
   max-height: 90vh;
   overflow-y: auto;
   background: var(--surface);
@@ -1419,7 +1419,12 @@ body.modal-open { overflow: hidden; }
   transform: translateY(24px) scale(0.97);
   opacity: 0;
   transition: transform 0.35s var(--ease), opacity 0.35s var(--ease);
+  scrollbar-width: thin;
+  scrollbar-color: var(--red) transparent;
 }
+.modal__panel::-webkit-scrollbar { width: 6px; }
+.modal__panel::-webkit-scrollbar-track { background: transparent; }
+.modal__panel::-webkit-scrollbar-thumb { background: var(--red); border-radius: 3px; }
 .modal.is-open .modal__panel {
   transform: translateY(0) scale(1);
   opacity: 1;
@@ -1487,15 +1492,18 @@ body.modal-open { overflow: hidden; }
   gap: 7px;
 }
 .demo-form__field label {
-  font-size: 12.5px;
+  font-size: 11.5px;
   font-weight: 600;
   color: var(--warm-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
-.demo-form__field label span {
-  color: var(--text-faint);
-  font-weight: 400;
+.demo-form__required {
+  color: var(--red);
+  margin-left: 1px;
 }
 .demo-form__field input,
+.demo-form__field select,
 .demo-form__field textarea {
   width: 100%;
   background: rgba(246, 242, 241, 0.03);
@@ -1516,6 +1524,7 @@ body.modal-open { overflow: hidden; }
   min-height: 76px;
 }
 .demo-form__field input:focus,
+.demo-form__field select:focus,
 .demo-form__field textarea:focus {
   outline: none;
   border-color: rgba(249, 66, 58, 0.55);
@@ -1524,6 +1533,56 @@ body.modal-open { overflow: hidden; }
 }
 .demo-form__field input:invalid:not(:placeholder-shown) {
   border-color: rgba(249, 66, 58, 0.4);
+}
+
+.demo-form__field select {
+  appearance: none;
+  padding-right: 36px;
+  color: var(--text-primary);
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5.5 8l4.5 4.5L14.5 8' stroke='%23CBC4BC' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+.demo-form__field select:invalid {
+  color: var(--text-faint);
+}
+.demo-form__field select option {
+  background: var(--surface);
+  color: var(--text-primary);
+}
+
+.demo-form__phone {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 8px;
+}
+.demo-form__country {
+  padding-left: 12px;
+  padding-right: 28px;
+  background-position: right 8px center;
+}
+
+.demo-form__checks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.demo-form__check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-muted);
+  cursor: pointer;
+  line-height: 1.45;
+}
+.demo-form__check input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 16px; height: 16px;
+  margin-top: 1px;
+  accent-color: var(--red);
+  cursor: pointer;
 }
 
 .demo-form__submit {

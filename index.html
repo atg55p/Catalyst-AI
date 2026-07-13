@@ -507,35 +507,101 @@
     <div class="modal__body">
       <p class="eyebrow">GET STARTED</p>
       <h3 id="demoModalTitle" class="modal__heading">Book a Demo</h3>
-      <p class="modal__subhead">See how Catalyst AI can accelerate your product-market fit.</p>
+      <p class="modal__subhead">See how Catalyst AI turns customer discovery into qualified conversations.</p>
 
-      <form class="demo-form" id="demoForm" novalidate>
+      <form class="demo-form" id="demoForm">
         <input type="hidden" name="access_key" value="44332a4f-8fd6-4401-8364-028cd202359d">
         <input type="hidden" name="subject" value="New demo request — Catalyst AI">
         <input type="hidden" name="from_name" value="Catalyst AI Website">
         <input type="checkbox" name="botcheck" class="demo-form__honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
 
         <div class="demo-form__field">
-          <label for="demoName">Full name</label>
-          <input type="text" id="demoName" name="name" placeholder="Jane Founder" autocomplete="name" required>
+          <label for="demoName">Full Name</label>
+          <input type="text" id="demoName" name="name" placeholder="Jane Doe" autocomplete="name" required>
         </div>
         <div class="demo-form__field">
-          <label for="demoEmail">Work email</label>
-          <input type="email" id="demoEmail" name="email" placeholder="jane@startup.com" autocomplete="email" required>
+          <label for="demoEmail">Work Email</label>
+          <input type="email" id="demoEmail" name="email" placeholder="you@company.com" autocomplete="email" required>
         </div>
         <div class="demo-form__field">
-          <label for="demoCompany">Company</label>
-          <input type="text" id="demoCompany" name="company" placeholder="Startup, Inc." autocomplete="organization" required>
+          <label for="demoPhone">Phone Number</label>
+          <div class="demo-form__phone">
+            <select name="phone_country" class="demo-form__country" aria-label="Country code">
+              <option value="+1">US +1</option>
+              <option value="+44">UK +44</option>
+              <option value="+91">IN +91</option>
+              <option value="+61">AU +61</option>
+              <option value="other">Other</option>
+            </select>
+            <input type="tel" id="demoPhone" name="phone" placeholder="(555) 000-0000" autocomplete="tel">
+          </div>
         </div>
         <div class="demo-form__field">
-          <label for="demoMessage">What are you hoping to validate? <span>(optional)</span></label>
-          <textarea id="demoMessage" name="message" rows="3" placeholder="Tell us a bit about your product and stage."></textarea>
+          <label for="demoSeniority">Seniority <span class="demo-form__required">*</span></label>
+          <select id="demoSeniority" name="seniority" required>
+            <option value="" disabled selected>Please select</option>
+            <option>Founder / CEO</option>
+            <option>C-Suite / VP</option>
+            <option>Director</option>
+            <option>Manager</option>
+            <option>Individual Contributor</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="demo-form__field">
+          <label for="demoCompanySize">Company Size <span class="demo-form__required">*</span></label>
+          <select id="demoCompanySize" name="company_size" required>
+            <option value="" disabled selected>Please select</option>
+            <option>1–10</option>
+            <option>11–50</option>
+            <option>51–200</option>
+            <option>201–500</option>
+            <option>500+</option>
+          </select>
+        </div>
+        <div class="demo-form__field">
+          <label for="demoSalesTeam">Sales Team Size</label>
+          <select id="demoSalesTeam" name="sales_team_size">
+            <option value="" disabled selected>Please select</option>
+            <option>No sales team yet</option>
+            <option>1–5</option>
+            <option>6–20</option>
+            <option>21–50</option>
+            <option>50+</option>
+          </select>
+        </div>
+        <div class="demo-form__field">
+          <label for="demoSource">How did you hear about us?</label>
+          <select id="demoSource" name="source">
+            <option value="" disabled selected>Please select</option>
+            <option>Search</option>
+            <option>Social Media</option>
+            <option>Referral</option>
+            <option>Podcast / YouTube</option>
+            <option>Newsletter</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="demo-form__field">
+          <label for="demoMessage">Message</label>
+          <textarea id="demoMessage" name="message" rows="3" placeholder="Briefly describe your needs…"></textarea>
+        </div>
+
+        <div class="demo-form__checks">
+          <label class="demo-form__check">
+            <input type="checkbox" name="sms_account_consent">
+            <span>I consent to receive account updates via SMS</span>
+          </label>
+          <label class="demo-form__check">
+            <input type="checkbox" name="sms_marketing_consent">
+            <span>I consent to receive marketing offers via SMS</span>
+          </label>
         </div>
 
         <p class="demo-form__error" id="demoFormError" hidden>Something went wrong sending your request. Please try again.</p>
 
         <button type="submit" class="btn btn--primary demo-form__submit">
-          <span class="demo-form__submit-label">Request Demo</span>
+          <span class="demo-form__submit-label">Submit</span>
         </button>
         <p class="demo-form__privacy">We'll only use this to reach out about your demo. No spam.</p>
       </form>
